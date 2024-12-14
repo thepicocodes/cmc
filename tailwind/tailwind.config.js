@@ -20,7 +20,7 @@ module.exports = {
 			},
 			fontSize: {
 				h1: ['3.562rem', { lineHeight: '120%', fontWeight: '700' }],
-				h2: ['3rem', { lineHeight: '120%', fontWeight: '700' }],
+				h2: ['3rem', { lineHeight: '120%', fontWeight: '500' }],
 				h3: ['2.5rem', { lineHeight: '120%', fontWeight: '700' }],
 				h4: ['2.062rem', { lineHeight: '120%', fontWeight: '700' }],
 				h5: ['1.750rem', { lineHeight: '120%', fontWeight: '700' }],

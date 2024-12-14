@@ -15,7 +15,8 @@ get_header();
 
     <img src="<?php echo get_template_directory_uri(); ?>/images/product-img02.png" alt="products img"
         class="block w-full max-h-[500px] mt-10">
-    <div class="relative rounded-2xl w-full max-w-[800px] mt-[-40px] mx-auto py-[30px] px-10 bg-white z-auto">
+    <div
+        class="relative rounded-2xl w-full max-w-[800px] mt-[-40px] mx-auto py-[30px] px-10 bg-white z-auto drop-shadow-xl">
         <p class="text-[#020026] font-normal font-lato">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Proin
             id auctor ante, sit amet aliquam dui. Vivamus
@@ -23,7 +24,6 @@ get_header();
 
         <div id="contacto" class="">
             <form action="get" class="mt-10">
-
                 <div class="flex w-full flex-col gap-10 md:flex-row">
                     <div class="flex w-full flex-col">
                         <label for="Name" class="text-base text-gray-QG font-bold">Nombre:</label>
@@ -46,7 +46,7 @@ get_header();
                 <div class="mt-10">
                     <label for="" class="text-base text-gray-QG font-bold">Mensaje:</label>
                     <input type="email" placeholder=""
-                        class="rounded-lg border-[#E0E0E0] border-2 w-full mt-2 h-[80px] p-[18px] outline-none">
+                        class="rounded-lg border-[#E0E0E0] border-2 w-full mt-2 h-[80px] p-[18px] outline-none bg-[#f8f8f8]">
                 </div>
                 <button class="rounded-lg w-max mt-[30px] p-[18px] text-xl text-gray-QG font-medium bg-yellow-QG">
                     Enviar

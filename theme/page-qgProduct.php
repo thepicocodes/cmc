@@ -2,7 +2,7 @@
 
 /**
  *
- * Template Name: Product details Page
+ * Template Name: QG Product details Page
  *
  * @package CMC
  */
@@ -12,7 +12,7 @@ get_header();
 
 <div class="w-full max-w-screen-xl mx-auto px-5">
     <section class="mt-24">
-        <span class="text-green-qg text-base font-bold">Caribbean Modular Concept/</span>
+        <span class="text-green-qg text-base font-lato font-extrabold">Quality Guard/</span>
         <h2 class="mt-2 text-h5 md:text-h2 text-black-primmary font-medium">[Nombre del producto]</h2>
 
         <div class="mt-10 grid grid-cols-1 lg:grid-cols-[760px_1fr] gap-4">
@@ -20,13 +20,14 @@ get_header();
                 class="block w-full max-w-[1020px] max-h-[500px]">
             <div class="w-full max-w-[464px] pt-8 px-9 pb-10">
                 <p class="text-m font-medium text-blue-modular">Precio desde</p>
-                <span class="text-h5 md:text-h2 text-gray-QG">RD$120,000</span>
+                <span class="text-h5 md:text-h2 font-medium text-gray-QG">RD$120,000</span>
                 <p class="text-m font-medium text-blue-modular">Estos precios están sujetos a cotización</p>
                 <a href=""
-                    class="rounded-lg block w-full mt-4 p-4 font-bold text-center text-white bg-green-modular">Cotiza
+                    class="rounded-lg block w-full mt-4 p-4 font-medium text-center text-gray-QG bg-yellow-QG">Cotiza
                     con
                     nosotros</a>
-                <a href="" class="rounded-lg block w-full mt-4 p-4 font-bold text-center text-white bg-green-10">¿Tienes
+                <a href=""
+                    class="rounded-lg block w-full mt-4 p-4 font-medium text-center text-white bg-green-10">¿Tienes
                     dudas?</a>
             </div>
         </div>
@@ -166,7 +167,7 @@ get_header();
             </div>
         </div>
         <div class="flex justify-center">
-            <button class="rounded-lg mt-20 p-4 text-2xl text-white bg-green-modular">Ver todos</button>
+            <button class="rounded-lg mt-20 p-4 text-2xl text-gray-QG font-medium bg-yellow-QG">Ver todos</button>
         </div>
     </section>
 </div>

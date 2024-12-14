@@ -9,7 +9,7 @@
 
 ?>
 
-<header class="border-b py-4 px-5 bg-blue-50">
+<header class="py-5 px-5">
 	<div class="w-full max-w-screen-xl mx-auto flex flex-row items-center justify-between md:justify-between gap-x-2">
 		<div class="flex flex-row gap-6">
 			<a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/nav-img.png" alt="Logo QG"
@@ -21,7 +21,7 @@
 		<nav id="navigation"
 			class="hidden lg:flex md:flex-1 w-full h-screen md:h-auto flex-col md:flex-row items-center md:justify-center gap-x-1 absolute md:static left-0 bg-white md:bg-inherit z-50 <?php echo is_user_logged_in() ? 'top-10' : 'top-0' ?>">
 			<ul id="nav-links"
-				class="w-full h-screen md:h-auto md:w-fit flex flex-col gap-y-5 gap-x-4 md:flex-row md:items-center px-5 md:px-0 text-base">
+				class="w-full h-screen md:h-auto md:w-fit flex flex-col gap-y-5 gap-x-4 md:flex-row md:items-center px-5 md:px-0 text-base font-medium">
 				<a id="nav-link" href="#" class="close block p-2.5 cursor-pointer self-end md:hidden">
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-10 self-end pointer"
 						viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -39,12 +39,12 @@
 				</li>
 				<li>
 					<div class="relative inline-block w-full lg:w-auto text-left group">
-						<div class="flex flex-row items-center justify-between gap-x-1">
+						<div class="flex flex-row items-center justify-between gap-x-2.5">
 							<a href="/"
 								class="px-1 py-2 text-gray-QG hover:text-green-10 hover:font-bold transition-all duration-300">
 								Productos
 							</a>
-							<svg id="dropdownButton" xmlns="http://www.w3.org/2000/svg" class="h-6 lg:h-4"
+							<svg id="dropdownButton" xmlns="http://www.w3.org/2000/svg" class="h-6 lg:h-4 fill-gray-QG"
 								viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
 								<path
 									d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
