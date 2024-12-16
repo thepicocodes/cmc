@@ -18,16 +18,15 @@ get_header();
         <div class="mt-10 grid grid-cols-1 lg:grid-cols-[760px_1fr] gap-4">
             <img src="<?php echo get_template_directory_uri(); ?>/images/product-img02.png" alt="products img"
                 class="block w-full max-w-[1020px] max-h-[500px]">
-            <div class="w-full max-w-[464px] pt-8 px-9 pb-10">
+            <div class="w-full md:max-w-[464px] pt-8 md:px-9 pb-10">
                 <p class="text-m font-medium text-blue-modular">Precio desde</p>
                 <span class="text-h5 md:text-h2 font-medium text-gray-QG">RD$120,000</span>
                 <p class="text-m font-medium text-blue-modular">Estos precios están sujetos a cotización</p>
                 <a href=""
-                    class="rounded-lg block w-full mt-4 p-4 font-medium text-center text-gray-QG bg-yellow-QG">Cotiza
-                    con
-                    nosotros</a>
+                    class="rounded-lg block w-full mt-4 p-4 font-medium text-2xl text-center text-gray-QG bg-yellow-QG">Cotiza
+                    ahora</a>
                 <a href=""
-                    class="rounded-lg block w-full mt-4 p-4 font-medium text-center text-white bg-green-10">¿Tienes
+                    class="rounded-lg block w-full mt-4 p-4 font-medium text-2xl text-center text-white bg-green-10">¿Tienes
                     dudas?</a>
             </div>
         </div>
@@ -112,7 +111,7 @@ get_header();
             <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                     class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                <div class="p-5">
+                <div class="py-5 px-5 pb-10">
                     <span class="text-green-modular font-bold">Nombre del producto</span>
                     <p class="mt-2 text-m text-black-primmary leading-[30px]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -131,7 +130,7 @@ get_header();
             <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                     class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                <div class="p-5">
+                <div class="py-5 px-5 pb-10">
                     <span class="text-green-modular font-bold">Nombre del producto</span>
                     <p class="mt-2 text-m text-black-primmary leading-[30px]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -150,7 +149,7 @@ get_header();
             <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                     class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                <div class="p-5">
+                <div class="py-5 px-5 pb-10">
                     <span class="text-green-modular font-bold">Nombre del producto</span>
                     <p class="mt-2 text-m text-black-primmary leading-[30px]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet

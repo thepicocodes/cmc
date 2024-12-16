@@ -55,14 +55,16 @@ get_header();
         </div>
     </div>
 
-    <div class="w-full max-w-[800px] mt-10 mx-auto">
-        <div class="h-[400px]">
-            <div class="grid md:grid-cols-[400px_1fr]">
-                <iframe width="400px" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+    <div class="w-full max-w-[800px] mt-10 mb-[200px] mx-auto">
+        <div class="block h-[400px]">
+            <div class="grid md:grid-cols-[400px_1fr] gap-2.5 md:gap-0">
+                <iframe
+                    class="rounded-2xl md:rounded-tr-none md:rounded-br-none md:rounded-tl-2xl md:rounded-bl-2xl w-full md:w-[400px] h-[400px]"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                     src="https://maps.google.com/maps?width=400px25&amp;height=400&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
                         href="https://www.gps.ie/">gps vehicle tracker</a></iframe>
                 <div
-                    class="rounded-2xl py-[37px] px-[53px] flex flex-col justify-between bg-yellow-20 font-lato text-gray-QG">
+                    class="rounded-2xl md:rounded-bl-none md:rounded-tl-none md:rounded-tr-2xl md:rounded-br-2xl py-[37px] px-[53px] flex flex-col justify-between bg-yellow-20 font-lato text-gray-QG">
                     <div>
                         <h5 class="text-m font-extrabold">Nagua</h5>
                         <span> [Dirección aquí]</span>

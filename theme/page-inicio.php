@@ -86,7 +86,7 @@ get_header();
                 <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                         class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                    <div class="p-5">
+                    <div class="py-5 px-5 pb-10">
                         <span class="text-green-modular font-bold">Nombre del producto</span>
                         <p class="mt-2 text-m text-black-primmary leading-[30px]">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -106,7 +106,7 @@ get_header();
                 <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                         class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                    <div class="p-5">
+                    <div class="py-5 px-5 pb-10">
                         <span class="text-green-modular font-bold">Nombre del producto</span>
                         <p class="mt-2 text-m text-black-primmary leading-[30px]">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -126,7 +126,7 @@ get_header();
                 <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                         class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                    <div class="p-5">
+                    <div class="py-5 px-5 pb-10">
                         <span class="text-green-modular font-bold">Nombre del producto</span>
                         <p class="mt-2 text-m text-black-primmary leading-[30px]">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -145,7 +145,7 @@ get_header();
                 <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                         class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                    <div class="p-5">
+                    <div class="py-5 px-5 pb-10">
                         <span class="text-green-modular font-bold">Nombre del producto</span>
                         <p class="mt-2 text-m text-black-primmary leading-[30px]">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -164,7 +164,7 @@ get_header();
                 <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                         class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                    <div class="p-5">
+                    <div class="py-5 px-5 pb-10">
                         <span class="text-green-modular font-bold">Nombre del producto</span>
                         <p class="mt-2 text-m text-black-primmary leading-[30px]">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -183,7 +183,7 @@ get_header();
                 <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                         class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                    <div class="p-5">
+                    <div class="py-5 px-5 pb-10">
                         <span class="text-green-modular font-bold">Nombre del producto</span>
                         <p class="mt-2 text-m text-black-primmary leading-[30px]">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -244,27 +244,29 @@ get_header();
                 elit
             </p>
 
-            <div class="mt-5 !grid grid-cols-1 md:grid-cols-[314px_914px]">
-                <div class="rounded-lg p-6 flex flex-col items-center justify-center text-center bg-yellow-20">
+            <div class="mt-5 !grid grid-cols-1 xl:grid-cols-[314px_914px] gap-2.5">
+                <div
+                    class="rounded-lg border-4 border-yellow-20 p-6 flex flex-col items-center justify-center text-center bg-yellow-20">
                     <span class="text-4xl font-bold text-[#602900]">550+</span>
                     <p class="text-brown-700 mt-2">Clientes satisfechos</p>
                 </div>
 
-                <div id="testimonial-swiper" class="swiper testimonial-swiper !ml-2.5">
-                    <div class="swiper-wrapper !w-full !max-w-[914px] !h-[300px] !gap-2.5">
+                <div id="testimonial-swiper"
+                    class="swiper testimonial-swiper rounded-lg border-4 border-yellow-20 !w-full !max-w-[914px]">
+                    <div class="swiper-wrapper !h-[300px] !gap-2.5">
                         <div
-                            class="swiper-slide rounded-lg p-6 !flex !flex-col !justify-center text-center text-[#602900] bg-yellow-20">
-                            <p class="text-brown-800 text-xl font-medium mb-4">
+                            class="swiper-slide rounded-lg p-6 !flex !flex-col !justify-center text-center bg-yellow-20">
+                            <p class="mb-4 text-[#602900] text-2xl font-medium">
                                 "Have full control of your budget and avoid waste"
                             </p>
-                            <p class="text-brown-600 font-semibold">Nombre del cliente</p>
+                            <p class="text-[#602900] text-m font-lato font-bold">Nombre del cliente</p>
                         </div>
                         <div
                             class="swiper-slide rounded-lg p-6 !flex !flex-col !justify-center text-center text-[#602900] bg-yellow-20">
-                            <p class="text-brown-800 text-xl font-medium mb-4">
+                            <p class="mb-4 text-[#602900] text-xl font-medium">
                                 "Have full control of your budget and avoid waste"
                             </p>
-                            <p class="text-brown-600 font-semibold">Nombre del cliente</p>
+                            <p class="text-[#602900] text-m font-lato font-bold">Nombre del cliente</p>
                         </div>
                     </div>
 
@@ -274,7 +276,7 @@ get_header();
         </section>
 
         <section id="contacto"
-            class="mt-[136PX] flex bg-[url('images/contact-img.png')] bg-cover bg-center bg-no-repeat md:justify-end">
+            class="mt-[136PX] px-5  flex bg-[url('images/contact-img.png')] bg-cover bg-center bg-no-repeat md:justify-end">
             <div class="w-full max-w-[682px] py-14 md:px-10">
                 <div class="rounded-2xl p-10 text-gray-QG font-lato backdrop-blur-xl bg-gray-100/75">
                     <h2 class="md:text-h2 text-4xl font-medium">Contáctanos</h2>

@@ -10,7 +10,7 @@ get_header();
 ?>
 
 
-<div class="w-full max-w-screen-xl mx-auto px-5 md:px-0">
+<div class="w-full max-w-screen-xl mx-auto px-5">
     <section class="mt-24">
         <div class="relative mt-6">
             <img src="<?php echo get_template_directory_uri(); ?>/images/bgimg.png" alt="products img"
@@ -91,7 +91,7 @@ get_header();
             <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                     class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                <div class="p-5">
+                <div class="py-5 px-5 pb-10">
                     <span class="text-green-modular font-bold">Nombre del producto</span>
                     <p class="mt-2 text-m text-black-primmary leading-[30px]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -110,7 +110,7 @@ get_header();
             <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                     class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                <div class="p-5">
+                <div class="py-5 px-5 pb-10">
                     <span class="text-green-modular font-bold">Nombre del producto</span>
                     <p class="mt-2 text-m text-black-primmary leading-[30px]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -129,7 +129,7 @@ get_header();
             <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                     class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                <div class="p-5">
+                <div class="py-5 px-5 pb-10">
                     <span class="text-green-modular font-bold">Nombre del producto</span>
                     <p class="mt-2 text-m text-black-primmary leading-[30px]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -147,7 +147,7 @@ get_header();
             <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                     class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                <div class="p-5">
+                <div class="py-5 px-5 pb-10">
                     <span class="text-green-modular font-bold">Nombre del producto</span>
                     <p class="mt-2 text-m text-black-primmary leading-[30px]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -165,7 +165,7 @@ get_header();
             <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                     class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                <div class="p-5">
+                <div class="py-5 px-5 pb-10">
                     <span class="text-green-modular font-bold">Nombre del producto</span>
                     <p class="mt-2 text-m text-black-primmary leading-[30px]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -183,7 +183,7 @@ get_header();
             <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                     class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                <div class="p-5">
+                <div class="py-5 px-5 pb-10">
                     <span class="text-green-modular font-bold">Nombre del producto</span>
                     <p class="mt-2 text-m text-black-primmary leading-[30px]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet

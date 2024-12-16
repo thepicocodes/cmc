@@ -64,7 +64,7 @@ get_header();
             <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                     class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                <div class="p-5">
+                <div class="py-5 px-5 pb-10">
                     <span class="text-green-modular font-bold">Nombre del producto</span>
                     <p class="mt-2 text-m text-black-primmary leading-[30px]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -83,7 +83,7 @@ get_header();
             <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                     class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                <div class="p-5">
+                <div class="py-5 px-5 pb-10">
                     <span class="text-green-modular font-bold">Nombre del producto</span>
                     <p class="mt-2 text-m text-black-primmary leading-[30px]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -102,7 +102,7 @@ get_header();
             <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                     class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                <div class="p-5">
+                <div class="py-5 px-5 pb-10">
                     <span class="text-green-modular font-bold">Nombre del producto</span>
                     <p class="mt-2 text-m text-black-primmary leading-[30px]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -120,7 +120,7 @@ get_header();
             <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                     class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                <div class="p-5">
+                <div class="py-5 px-5 pb-10">
                     <span class="text-green-modular font-bold">Nombre del producto</span>
                     <p class="mt-2 text-m text-black-primmary leading-[30px]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -138,7 +138,7 @@ get_header();
             <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                     class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                <div class="p-5">
+                <div class="py-5 px-5 pb-10">
                     <span class="text-green-modular font-bold">Nombre del producto</span>
                     <p class="mt-2 text-m text-black-primmary leading-[30px]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -156,7 +156,7 @@ get_header();
             <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
                     class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                <div class="p-5">
+                <div class="py-5 px-5 pb-10">
                     <span class="text-green-modular font-bold">Nombre del producto</span>
                     <p class="mt-2 text-m text-black-primmary leading-[30px]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
@@ -172,8 +172,44 @@ get_header();
                 </div>
             </div>
         </div>
-        <div class="flex justify-center">
-            <button class="rounded-lg mt-20 p-4 text-2xl text-gray-QG bg-yellow-QG">Ver todos</button>
+        <div class="flex items-center justify-center space-x-2 mt-[56px]">
+            <button class="rounded w-[36px] h-[36px] text-center px-3 py-1 bg-gray-200 text-gray-600 hover:bg-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-2 fill-black-primmary"
+                    viewBox="0 0 320 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+                </svg>
+            </button>
+
+            <button
+                class="rounded w-[36px] h-[36px] text-center border px-3 py-1 border-green-modular text-green-modular font-bold">
+                1
+            </button>
+
+            <button
+                class="border w-[36px] h-[36px] text-center rounded px-3 py-1 border-gray-300 text-green-modular hover:bg-gray-200">
+                2
+            </button>
+
+            <span class="rounded border w-[36px] h-[36px] text-center border-gray-300 p-[6px] text-gray-600">...</span>
+
+            <button
+                class="rounded border w-[36px] h-[36px] text-center px-3 py-1 border-gray-300 text-green-modular hover:bg-gray-200">
+                9
+            </button>
+            <button
+                class="rounded border w-[36px] h-[36px] text-center px-3 py-1 border-gray-300 text-green-modular hover:bg-gray-200">
+                10
+            </button>
+
+            <button
+                class="rounded w-[36px] h-[36px] text-center px-3 py-1 bg-gray-200 text-green-modular hover:bg-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-2 fill-black-primmary"
+                    viewBox="0 0 320 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                </svg>
+            </button>
         </div>
     </section>
 

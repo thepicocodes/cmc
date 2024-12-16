@@ -31,17 +31,17 @@
 				</a>
 
 				<li><a href="<?php echo esc_url(home_url('/')); ?>"
-						class="block w-full md:w-fit px-1 py-2 text-gray-QG hover:text-green-10 hover:font-bold transition-all duration-300">Quality
+						class="block w-full md:w-fit px-1 py-2 text-green-qg hover:text-shadow-sm transition-colors">Quality
 						Guard</a>
 				</li>
 				<li><a href="<?php echo esc_url(home_url('/cmc')); ?>"
-						class="block w-full md:w-fit px-1 py-2 text-gray-QG hover:text-green-10 hover:font-bold transition-all duration-300">CMC</a>
+						class="block w-full md:w-fit px-1 py-2 text-green-qg hover:text-shadow-sm transition-colors">CMC</a>
 				</li>
 				<li>
 					<div class="relative inline-block w-full lg:w-auto text-left group">
 						<div class="flex flex-row items-center justify-between gap-x-2.5">
 							<a href="/"
-								class="px-1 py-2 text-gray-QG hover:text-green-10 hover:font-bold transition-all duration-300">
+								class="block w-full md:w-fit px-1 py-2 text-green-qg hover:text-shadow-sm transition-colors">
 								Productos
 							</a>
 							<svg id="dropdownButton" xmlns="http://www.w3.org/2000/svg" class="h-6 lg:h-4 fill-gray-QG"
@@ -66,7 +66,7 @@
 					</div>
 				</li>
 				<li><a href="<?php echo esc_url(home_url('/')); ?>"
-						class="block w-full md:w-fit px-1 py-2 text-gray-QG hover:text-green-10 hover:font-bold transition-all duration-300">Contactos</a>
+						class="block w-full md:w-fit px-1 py-2 text-green-qg hover:text-shadow-sm transition-colors">Contactos</a>
 				</li>
 			</ul>
 		</nav>

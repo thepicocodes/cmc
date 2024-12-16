@@ -1,4 +1,5 @@
 const { gray, yellow } = require('tailwindcss/colors.js');
+const plugin = require('tailwindcss/plugin');
 
 // Set the Preflight flag based on the build target.
 const includePreflight = 'editor' === process.env._TW_TARGET ? false : true;
@@ -17,6 +18,11 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				lato: ['lato', 'sans-serif'],
+			},
+			textShadow: {
+				sm: '1px 1px 1px rgba(80, 128, 142, 0.9)', // Sombra ligera
+				DEFAULT: '2px 2px 4px rgba(0, 0, 0, 0.3)', // Sombra por defecto
+				lg: '3px 3px 6px rgba(0, 0, 0, 0.5)', // Sombra más pronunciada
 			},
 			fontSize: {
 				h1: ['3.562rem', { lineHeight: '120%', fontWeight: '700' }],
@@ -69,6 +75,17 @@ module.exports = {
 
 		// Extract colors and widths from `theme.json`.
 		require('@_tw/themejson'),
+
+		plugin(function ({ matchUtilities, theme }) {
+			matchUtilities(
+				{
+					'text-shadow': (value) => ({
+						textShadow: value,
+					}),
+				},
+				{ values: theme('textShadow') }
+			);
+		}),
 
 		// Uncomment below to add additional first-party Tailwind plugins.
 		// require('@tailwindcss/forms'),

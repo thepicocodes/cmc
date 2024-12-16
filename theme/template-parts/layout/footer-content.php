@@ -51,7 +51,7 @@
 
         <div
             class="border-t border-white/20 mt-10 pt-5 flex flex-col md:flex-row items-center justify-between gap-y-10">
-            <span>© Copyright - Caribbean Modular Concept / Quality Guard 2024</span>
+            <span class="text-gray-QG">© Copyright - Caribbean Modular Concept / Quality Guard 2024</span>
             <div class="flex flex-col md:flex-row items-center gap-4">
                 <ul class="w-full flex items gap-4">
                     <li>
