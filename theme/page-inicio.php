@@ -252,7 +252,7 @@ get_header();
                 </div>
 
                 <div id="testimonial-swiper"
-                    class="swiper testimonial-swiper rounded-lg border-4 border-yellow-20 !w-full !max-w-[914px]">
+                    class="swiper testimonial-swiper rounded-lg border-4 border-yellow-20 !w-full md:!max-w-[914px]">
                     <div class="swiper-wrapper !h-[300px] !gap-2.5">
                         <div
                             class="swiper-slide rounded-lg p-6 !flex !flex-col !justify-center text-center bg-yellow-20">
