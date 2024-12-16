@@ -21,24 +21,22 @@ get_header();
                     class="block w-max">
                 <h2 class="mt-3 text-h5 text-black-primmary font-bold">Caribbean Modular Concept</h2>
                 <p class="mt-7 leading-[30px] font-lato text-gray-QG">
-                    ut interdum tellus elit sed risus. Maecenas eget Ibbundance velit, sit amet feugiat lectus. ut
-                    interdum tellus elit sed risus. Maecenas eget Ibbundance velit, sit amet feugiat lectus.
+                    Diseñamos muebles innovadores y duraderos con materiales exclusivos como el HDF, ideales para cocinas, baños y closets. Con sede en Bávaro-Punta Cana y tienda en Nagua, ofrecemos calidad y personalización en toda República Dominicana y el Caribe.
                 </p>
 
-                <a href="" class="rounded-lg w-max mt-7 p-4 font-bold text-white bg-green-modular">Cotiza con
-                    nosotros</a>
+                <a href="" class="rounded-lg w-max mt-7 p-4 font-bold text-white bg-green-modular">Cotiza con nosotros</a>
             </div>
         </div>
 
         <div class="w-full max-w-[840px] mx-auto mt-24">
             <h3 class="text-h5 text-black-primmary">Sobre nosotros</h3>
+
             <p class="mt-6 text-xl text-gray-QG">
-                Vorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis
-                tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus
-                elit sed risus. Maecenas eget Ibbundance velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad
-                litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas,
-                ac scelerisque ante pulvinar.
+                En Caribbean Modular Concept diseñamos y fabricamos soluciones de mobiliario innovadoras y de alta calidad para cocinas, baños, vestidores y closets, adaptándonos a las necesidades específicas de cada cliente. Con presencia en República Dominicana y Puerto Rico, y planes de expansión por todo el Caribe, nos destacamos por ofrecer materiales de alta resistencia, como el HDF con laminados exclusivos, ideales para ambientes con alta humedad. Nuestra fábrica, equipada con maquinaria de última generación, garantiza acabados impecables y un estricto control de calidad que respalda la confianza de nuestros clientes en cada proyecto.
+                <br><br>
+                Desde nuestra central en Bávaro-Punta Cana y nuestra tienda en Nagua, cubrimos todo el país, brindando atención personalizada y soluciones que transforman espacios en experiencias únicas. Nuestro compromiso con la excelencia y la innovación, respaldado por una trayectoria de crecimiento constante, nos permite ofrecer diseños vanguardistas, acabados dinámicos y la capacidad de personalizar cada detalle. Caribbean Modular Concept no solo crea muebles, crea ambientes que reflejan estilo, funcionalidad y durabilidad.
             </p>
+
             <a href="#" class="rounded-lg inline-block mt-6 p-4 text-xl text-white bg-green-modular">Contáctanos</a>
         </div>
     </section>

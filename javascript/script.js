@@ -110,3 +110,21 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 });
+
+// Add this to your script.js file
+document.addEventListener('DOMContentLoaded', function () {
+    // Get the product search form
+    const productSearchForm = document.querySelector('form[action="/productos"]');
+    
+    if (productSearchForm) {
+        // Get all select elements within the form
+        const selects = productSearchForm.querySelectorAll('select');
+        
+        // Add change event listener to each select
+        selects.forEach(select => {
+            select.addEventListener('change', () => {
+                productSearchForm.submit();
+            });
+        });
+    }
+});

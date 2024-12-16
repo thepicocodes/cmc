@@ -17,10 +17,9 @@ get_header();
         class="block w-full max-h-[500px] mt-10">
     <div
         class="relative rounded-2xl w-full max-w-[800px] mt-[-40px] mx-auto py-[30px] px-10 bg-white z-auto drop-shadow-xl">
-        <p class="text-[#020026] font-normal font-lato">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Proin
-            id auctor ante, sit amet aliquam dui. Vivamus
-            vel odio quis est condimentum malesuada et a nibh.</p>
+        <p class="text-[#020026] font-normal font-lato">
+            ¿Tienes un proyecto en mente o necesitas más información? Completa el formulario y nuestro equipo se pondrá en contacto contigo lo antes posible. ¡Estamos aquí para ayudarte!
+        </p>
 
         <div id="contacto" class="">
             <form action="get" class="mt-10">

@@ -54,13 +54,8 @@
 						<div id="dropdownMenu"
 							class="hidden group-hover:block lg:absolute static mt-0 w-full lg:w-48 lg:rounded-md lg:shadow-lg bg-transparent lg:bg-white">
 							<div class="py-1">
-								<a href="#"
-									class="block px-4 py-4 lg:py-2 text-s text-black lg:border-b lg:border-[#E6E6E6]">1</a>
-								<a href="#"
-									class="block px-4 py-4 lg:py-2 text-s text-black lg:border-b lg:border-[#E6E6E6]">2</a>
-								<a href="#"
-									class="block px-4 py-4 lg:py-2 text-s text-black lg:border-b lg:border-[#E6E6E6]">3</a>
-								<a href="#" class="block px-4 py-4 lg:py-2 text-s text-black">4</a>
+								<a href="#" class="block px-4 py-4 lg:py-2 text-s text-black lg:border-b lg:border-[#E6E6E6]">Quality Guard</a>
+								<a href="#" class="block px-4 py-4 lg:py-2 text-s text-black lg:border-b lg:border-[#E6E6E6]">CMC</a>
 							</div>
 						</div>
 					</div>
@@ -75,14 +70,21 @@
 			<!-- search input -->
 			<div class="absolute top-[130px] left-0 md:top-0 md:static w-full px-2.5 md:px-0 z-auto">
 				<div id="input-search" class="hidden lg:block relative">
-					<input id="search-bar" type="search" placeholder="¿Qué andas buscando?"
-						class="border border-gray-1000 rounded-lg w-full md:w-[232px] px-3.5 py-3.5 placeholder:text-s placeholder:text-gray-700">
-					<svg xmlns="http://www.w3.org/2000/svg" id="search-icon"
-						class="absolute top-2/4 right-6 -translate-y-2/4 h-4"
-						viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-						<path
-							d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
-					</svg>
+					<form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
+						<input id="search-bar" 
+							   name="s" 
+							   type="search" 
+							   placeholder="¿Qué andas buscando?"
+							   value="<?php echo get_search_query(); ?>"
+							   class="border border-gray-1000 rounded-lg w-full md:w-[232px] px-3.5 py-3.5 placeholder:text-s placeholder:text-gray-700">
+						<button type="submit" class="absolute top-2/4 right-6 -translate-y-2/4">
+							<svg xmlns="http://www.w3.org/2000/svg" id="search-icon"
+								class="h-4"
+								viewBox="0 0 512 512">
+								<path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+							</svg>
+						</button>
+					</form>
 				</div>
 			</div>
 			<!--  -->
