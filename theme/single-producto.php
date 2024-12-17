@@ -2,7 +2,7 @@
 
 /**
  *
- * Template Name: Product details Page
+ * Template Name: Producto Page
  *
  * @package CMC
  */
@@ -13,7 +13,7 @@ get_header();
 <div class="w-full max-w-screen-xl mx-auto px-5">
     <section class="mt-24">
         <span class="text-green-qg text-base font-bold">Caribbean Modular Concept/</span>
-        <h2 class="mt-2 text-h5 md:text-h2 text-black-primmary font-medium">[Nombre del producto]</h2>
+        <h2 class="mt-2 text-h5 md:text-h2 text-black-primmary font-medium"><?php the_title(); ?></h2>
 
         <div class="mt-10 grid grid-cols-1 lg:grid-cols-[760px_1fr] gap-4">
             <img src="<?php echo get_template_directory_uri(); ?>/images/product-img02.png" alt="products img"

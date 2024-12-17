@@ -195,3 +195,146 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+function register_producto_post_type() {
+	$args = array(
+		'public' => true,
+		'label'  => 'Productos',
+		'rewrite' => array(
+			'slug' => 'productos/%producto_category%',
+			'with_front' => false
+		),
+		'taxonomies' => array('producto_category'),
+	);
+	register_post_type('producto', $args);
+
+	// Register the custom taxonomy with radio button selection
+	$taxonomy_args = array(
+		'hierarchical' => true,
+		'labels' => array(
+			'name' => 'Linea de Productos',
+			'singular_name' => 'Linea de Producto',
+		),
+		'show_ui' => true,
+		'show_admin_column' => false,
+		'query_var' => true,
+		'rewrite' => array('slug' => 'producto-category'),
+		'meta_box_cb' => 'producto_category_meta_box', // Custom meta box callback
+	);
+	register_taxonomy('producto_category', 'producto', $taxonomy_args);
+}
+add_action('init', 'register_producto_post_type');
+
+// Custom meta box to force radio button selection
+function producto_category_meta_box($post, $box) {
+	$defaults = array('taxonomy' => 'producto_category');
+	if (!isset($box['args']) || !is_array($box['args']))
+		$args = array();
+	else
+		$args = $box['args'];
+	extract(wp_parse_args($args, $defaults), EXTR_SKIP);
+	$tax = get_taxonomy($taxonomy);
+	
+	$selected = wp_get_object_terms($post->ID, $taxonomy, array('fields' => 'ids'));
+	// Set default value if empty
+	$selected_id = !empty($selected) ? (int)$selected[0] : 0;
+	
+	$terms = get_terms($taxonomy, array('hide_empty' => false));
+	?>
+	<div class="categorydiv">
+		<p class="description">* Campo requerido</p>
+		<ul>
+			<?php foreach ($terms as $term) : ?>
+				<li>
+					<input type="radio" name="tax_input[<?php echo $taxonomy ?>][]" 
+						   id="<?php echo $term->slug ?>" 
+						   value="<?php echo $term->term_id ?>"
+						   <?php checked($selected_id, $term->term_id) ?>
+						   required>
+					<label for="<?php echo $term->slug ?>"><?php echo $term->name ?></label>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+	</div>
+	<?php
+}
+
+// Ensure only one category is saved
+function save_producto_category($post_id) {
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) 
+		return;
+	
+	if (!isset($_POST['tax_input']['producto_category']))
+		return;
+		
+	$term_id = is_array($_POST['tax_input']['producto_category']) ? 
+			   reset($_POST['tax_input']['producto_category']) : 
+			   $_POST['tax_input']['producto_category'];
+			   
+	wp_set_object_terms($post_id, (int)$term_id, 'producto_category');
+}
+add_action('save_post_producto', 'save_producto_category');
+
+// Keep the permalink structure
+function producto_permalink_structure($post_link, $post) {
+	if (is_object($post) && $post->post_type == 'producto') {
+		$terms = wp_get_object_terms($post->ID, 'producto_category');
+		if ($terms) {
+			$post_link = str_replace('%producto_category%', $terms[0]->slug, $post_link);
+		} else {
+			$post_link = str_replace('%producto_category%', 'uncategorized', $post_link);
+		}
+	}
+	return $post_link;
+}
+add_filter('post_type_link', 'producto_permalink_structure', 10, 2);
+
+// Add validation when saving the post
+function validate_producto_category($post_id) {
+	// Skip autosave
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) 
+		return $post_id;
+	
+	// Check if this is a producto post
+	if ('producto' !== get_post_type($post_id))
+		return $post_id;
+		
+	// Skip if this is a revision
+	if (wp_is_post_revision($post_id))
+		return $post_id;
+
+	// Skip if we're not trying to publish
+	if (!isset($_POST['post_status']) || $_POST['post_status'] !== 'publish')
+		return $post_id;
+		
+	// Verify if a category was selected
+	if (!isset($_POST['tax_input']['producto_category']) || empty($_POST['tax_input']['producto_category'])) {
+		// Don't save as publish
+		remove_action('save_post', 'validate_producto_category');
+		
+		wp_update_post(array(
+			'ID' => $post_id,
+			'post_status' => 'draft'
+		));
+		
+		add_action('save_post', 'validate_producto_category');
+		
+		// Add an error message
+		add_filter('redirect_post_location', function($location) {
+			return add_query_arg('message', 'category-required', $location);
+		});
+	}
+}
+add_action('save_post', 'validate_producto_category');
+
+// Display admin notice for missing category
+function producto_admin_notices() {
+	if (isset($_GET['message']) && $_GET['message'] == 'category-required') {
+		?>
+		<div class="error">
+			<p><?php _e('Se requiere seleccionar una categoría para el producto.', 'cmc'); ?></p>
+		</div>
+		<?php
+	}
+}
+add_action('admin_notices', 'producto_admin_notices');
