@@ -48,7 +48,15 @@ $line_value = isset($_GET['line']) ? esc_attr($_GET['line']) : '';
                     <ul class="flex flex-row items-center mt-2 md:mt-0 gap-2.5 text-[#828282] max-sm:w-full">
                         <li class="rounded-lg bg-[#f8f8f8] relative max-sm:w-full">
                             <button id="lines-options-btn" class="w-max flex flex-row items-center gap-2.5 p-4 max-sm:w-full">
-                                Linea de productos
+                                <?php
+                                    if ($line_value === 'qg') {
+                                        echo 'Quality Guard';
+                                    } elseif ($line_value === 'cmc') {
+                                        echo 'CMC';
+                                    } else {
+                                        echo 'Linea de productos';
+                                    }
+                                ?>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-[#828282]"
                                     viewBox="0 0 512 512">
                                     <path
