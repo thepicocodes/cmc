@@ -201,7 +201,7 @@ function register_producto_post_type() {
 		'public' => true,
 		'label'  => 'Productos',
 		'rewrite' => array(
-			'slug' => 'productos/%producto_category%',
+			'slug' => 'producto/%producto_category%',
 			'with_front' => false
 		),
 		'taxonomies' => array('producto_category'),
@@ -287,7 +287,7 @@ function producto_permalink_structure($post_link, $post) {
 	}
 	return $post_link;
 }
-add_filter('post_type_link', 'producto_permalink_structure', 10, 2);
+add_filter('post_type_link', 'producto_permalink_structure', 1, 2);
 
 // Add validation when saving the post
 function validate_producto_category($post_id) {
@@ -338,3 +338,94 @@ function producto_admin_notices() {
 	}
 }
 add_action('admin_notices', 'producto_admin_notices');
+
+function add_productos_rewrite_rules() {
+	// Add rule for the base productos page with search query
+	add_rewrite_rule(
+		'^productos/?$',
+		'index.php?page_id=' . get_page_by_path('productos')->ID . '&s=' . get_query_var('s'),
+		'top'
+	);
+
+    // Add rule for paginated productos page with 
+    add_rewrite_rule(
+        '^productos/page/([0-9]+)/?$',
+        'index.php?page_id=' . get_page_by_path('productos')->ID . '&paged=$matches[1]&s=' . get_query_var('s'),
+        'top'
+    );
+
+    // Add rule for search results with pagination
+    add_rewrite_rule(
+        '^page/([0-9]+)/?$',
+        'index.php?s=' . get_query_var('s') . '&paged=$matches[1]',
+        'top'
+    );
+
+    // Add rule for search results with pagination and line parameter
+    add_rewrite_rule(
+        '^page/([0-9]+)/?$',
+        'index.php?s=' . get_query_var('s') . '&paged=$matches[1]&line=' . get_query_var('line'),
+        'top'
+    );
+}
+add_action('init', 'add_productos_rewrite_rules');
+
+// Tell WordPress this is a page and handle query parameters
+function custom_pre_get_posts($query) {
+    if (!is_admin() && $query->is_main_query()) {
+        $page = get_page_by_path('productos');
+        
+        // Check if this is our productos page
+        if ($page && $query->get('page_id') == $page->ID) {
+            $query->is_404 = false;
+            $query->is_page = true;
+            $query->is_singular = true;
+		
+            // Set search if present
+            if (isset($_GET['s'])) {
+                $query->set('s', sanitize_text_field($_GET['s']));
+            }
+            
+            
+        }
+
+        // Handle search pagination
+        if ($query->is_search) {
+			// Set line filter if present
+            if (isset($_GET['line']) && !empty($_GET['line'])) {
+                $term = $_GET['line'] === 'qg' ? 'quality-guard' : 'cmc';
+                $tax_query = array(
+                    array(
+                        'taxonomy' => 'producto_category',
+                        'field'    => 'slug',
+                        'terms'    => $term
+                    )
+                );
+                $query->set('tax_query', $tax_query);
+            }
+            $query->set('post_type', 'producto'); // Ensure we are querying the 'producto' post type
+            $query->set('posts_per_page', 1); // Set the number of posts per page
+            if (get_query_var('paged')) {
+                $query->set('paged', get_query_var('paged'));
+            }
+        }
+    }
+}
+add_action('pre_get_posts', 'custom_pre_get_posts');
+
+// Register query vars
+function add_query_vars_filter($vars) {
+    $vars[] = 's';
+    $vars[] = 'line';
+    return $vars;
+}
+add_filter('query_vars', 'add_query_vars_filter');
+
+// Prevent canonical redirect for our custom URLs
+function custom_disable_redirect_canonical($redirect_url) {
+    if (isset($_GET['s']) || isset($_GET['line'])) {
+        return false;
+    }
+    return $redirect_url;
+}
+add_filter('redirect_canonical', 'custom_disable_redirect_canonical');

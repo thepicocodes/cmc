@@ -22,3 +22,35 @@ body {
 .text-shadow-none {
 	text-shadow: none;
 }
+
+.page-numbers {
+    @apply flex items-center gap-2;
+}
+
+.page-numbers li {
+    @apply list-none;
+}
+
+.page-numbers .page-numbers {
+    @apply rounded w-[36px] h-[36px] text-center px-3 py-1 border border-gray-300 text-green-modular hover:bg-gray-200 flex items-center justify-center;
+}
+
+.page-numbers .current {
+    @apply border-green-modular text-green-modular font-bold;
+}
+
+.page-numbers .prev,
+.page-numbers .next {
+    @apply bg-gray-200 border-none;
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.slide-in.visible {
+    opacity: 1;
+    transform: translateX(0);
+}

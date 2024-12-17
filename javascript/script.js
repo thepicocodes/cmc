@@ -89,16 +89,20 @@ new Swiper('#testimonial-swiper', {
 
 // FAQ
 document.addEventListener('DOMContentLoaded', function () {
-	// Selecciona todos los acordeones
 	const accordions = document.querySelectorAll('[data-accordion]');
 
 	accordions.forEach((accordion, index) => {
 		const button = accordion.querySelector('button');
 		const content = accordion.querySelector('[data-content]');
 
+		// Open first accordion by default
+		if (index === 0) {
+			content.classList.remove('hidden');
+		}
+
 		button.addEventListener('click', () => {
 			accordions.forEach((otherAccordion, otherIndex) => {
-				const otherContent =
+				const otherContent = 
 					otherAccordion.querySelector('[data-content]');
 
 				if (index === otherIndex) {
@@ -111,20 +115,31 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
-// Add this to your script.js file
 document.addEventListener('DOMContentLoaded', function () {
-    // Get the product search form
-    const productSearchForm = document.querySelector('form[action="/productos"]');
-    
-    if (productSearchForm) {
-        // Get all select elements within the form
-        const selects = productSearchForm.querySelectorAll('select');
-        
-        // Add change event listener to each select
-        selects.forEach(select => {
-            select.addEventListener('change', () => {
-                productSearchForm.submit();
-            });
-        });
+    // Video autoplay when in view
+    const video = document.getElementById('home-video');
+
+    if (video) {
+        const playVideoIfInView = () => {
+            const rect = video.getBoundingClientRect();
+            const isInView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+            if (isInView) {
+                video.play();
+            }
+        };
+
+        // Check on scroll
+        window.addEventListener('scroll', playVideoIfInView);
+
+        // Initial check
+        playVideoIfInView();
     }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+	const card = document.querySelector('.slide-in');
+	if (card) {
+		card.classList.add('visible');
+	}
 });

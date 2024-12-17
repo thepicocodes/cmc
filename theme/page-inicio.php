@@ -7,13 +7,15 @@
  * @package CMC
  */
 get_header();
+
+$video_url = wp_get_attachment_url(85);
 ?>
 
 <div class="px-5">
     <div class="w-full max-w-screen-xl mx-auto">
-        <section class="mt-10">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/hero-img.png" alt="hero image"
-                class="block w-full max-h-[460px]">
+        <section class="mt-24">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/qg-head.jpeg" alt="hero image"
+                class="block w-full max-w-[1240px] h-[460px] object-cover object-center rounded-2xl">
             <div class="w-full max-w-[840px] mx-auto mt-24">
                 <h3 class="text-h5 text-black-primmary">Sobre nosotros</h3>
                 <p class="mt-6 text-xl text-gray-QG">
@@ -25,8 +27,12 @@ get_header();
             </div>
         </section>
 
-        <img src="<?php echo get_template_directory_uri(); ?>/images/about-img.png" alt="hero image"
-            class="block w-full max-w-[1080px] max-h-[460px] mx-auto mt-[150px]">
+        <div class="block w-full max-w-[1080px] rounded-xl mt-[150px] overflow-hidden mx-auto">
+            <video id="home-video" controls class="block w-full max-w-[1080px] rounded-xl">
+                <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
 
 
         <!-- Products -->
@@ -34,11 +40,12 @@ get_header();
             <h2 class="text-h5 md:text-h2 text-blue-modular font-medium">Nuestros productos</h2>
             <div class="w-full mt-2 flex flex-col md:flex-row items-center gap-2.5">
                 <div class="relative w-full">
-                    <form action="/productos" method="GET" class="relative flex flex-col md:flex-row items-center gap-2.5">
+                    <form action="/" method="GET" class="relative flex flex-col md:flex-row items-center gap-2.5">
                         <div class="relative w-full">
+                            <input type="text" name="line" value="qg" hidden>
                             <input type="search" 
                                    name="s" 
-                                   class="rounded-lg border w-full h-[52px] border-gray-1000 p-[14px] text-s"
+                                   class="rounded-lg border w-full h-[52px] border-gray-1000 p-[14px] text-base"
                                    placeholder="¿Buscar entre mis productos?">
                             <button type="submit" class="absolute top-2/4 right-[17px] -translate-y-2/4 bg-white">
                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -49,148 +56,67 @@ get_header();
                                 </svg>
                             </button>
                         </div>
-                        
-                        <ul class="flex flex-row items-center mt-2 md:mt-0 gap-2.5 text-[#828282]">
-                            <li class="rounded-lg bg-[#f8f8f8]">
-                                <select name="line" class="w-max flex flex-row items-center gap-2.5 p-4 bg-transparent cursor-pointer">
-                                    <option value="">Línea de producto</option>
-                                    <option value="qg">Quality Guard</option>
-                                    <option value="cmc">CMC</option>
-                                </select>
-                            </li>
-                            <li class="rounded-lg bg-[#f8f8f8]">
-                                <select name="category" class="w-max flex flex-row items-center gap-2.5 p-4 bg-transparent cursor-pointer">
-                                    <option value="">Categoría</option>
-                                    <option value="cat1">Categoría 1</option>
-                                    <option value="cat2">Categoría 2</option>
-                                    <option value="cat3">Categoría 3</option>
-                                </select>
-                            </li>
-                        </ul>
                     </form>
                 </div>
             </div>
 
             <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-6 font-lato">
-                <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
-                        class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                    <div class="py-5 px-5 pb-10">
-                        <span class="text-green-modular font-bold">Nombre del producto</span>
-                        <p class="mt-2 text-m text-black-primmary leading-[30px]">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
-                            aliquam dui.
-                        </p>
-                        <a href=""
-                            class="mt-2 flex flex-row items-center justify-between font-bold text-green-10">Conoce
-                            más
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fill-green-10 w-4 h-4">
-                                <path
-                                    d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+                <?php
+                $args = array(
+                    'post_type' => 'producto',
+                    'posts_per_page' => 6,
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'producto_category',
+                            'field'    => 'slug',
+                            'terms'    => 'quality-guard'
+                        ),
+                    )
+                );
 
-                <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
-                        class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                    <div class="py-5 px-5 pb-10">
-                        <span class="text-green-modular font-bold">Nombre del producto</span>
-                        <p class="mt-2 text-m text-black-primmary leading-[30px]">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
-                            aliquam dui.
-                        </p>
-                        <a href=""
-                            class="mt-2 flex flex-row items-center justify-between font-bold text-green-10">Conoce
-                            más
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fill-green-10 w-4 h-4">
-                                <path
-                                    d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+                $products = new WP_Query($args);
 
-                <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
-                        class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                    <div class="py-5 px-5 pb-10">
-                        <span class="text-green-modular font-bold">Nombre del producto</span>
-                        <p class="mt-2 text-m text-black-primmary leading-[30px]">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
-                            aliquam dui.
-                        </p>
-                        <a href=""
-                            class="mt-2 flex flex-row items-center justify-between font-bold text-green-10">Conoce
-                            más
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fill-green-10 w-4 h-4">
-                                <path
-                                    d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-                            </svg>
-                        </a>
+                if ($products->have_posts()) :
+                    while ($products->have_posts()) : $products->the_post();
+                ?>
+                    <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"
+                                class="block w-full object-cover h-[300px] rounded-tl-xl rounded-tr-xl">
+                        <?php else : ?>
+                            <div class="block w-full object-cover h-[300px] bg-neutral-200 rounded-tl-xl rounded-tr-xl"></div>
+                        <?php endif; ?>
+
+                        <div class="py-5 px-5 pb-10">
+                            <span class="text-green-modular font-bold"><?php the_title(); ?></span>
+
+                            <p class="mt-2 text-m text-black-primmary leading-[30px] min-h-20">
+                                <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
+                            </p>
+
+                            <a href="<?php the_permalink(); ?>"
+                                class="mt-2 flex flex-row items-center justify-between font-bold text-green-10">
+                                Conoce más
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fill-green-10 w-4 h-4">
+                                    <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
-                        class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                    <div class="py-5 px-5 pb-10">
-                        <span class="text-green-modular font-bold">Nombre del producto</span>
-                        <p class="mt-2 text-m text-black-primmary leading-[30px]">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
-                            aliquam dui.
-                        </p>
-                        <a href=""
-                            class="mt-2 flex flex-row items-center justify-between font-bold text-green-10">Conoce
-                            más
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fill-green-10 w-4 h-4">
-                                <path
-                                    d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-                            </svg>
-                        </a>
+                <?php 
+                    endwhile;
+                    wp_reset_postdata();
+                else:
+                ?>
+                    <div class="col-span-full text-center text-gray-QG py-40">
+                        No existen productos.
                     </div>
-                </div>
-                <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
-                        class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                    <div class="py-5 px-5 pb-10">
-                        <span class="text-green-modular font-bold">Nombre del producto</span>
-                        <p class="mt-2 text-m text-black-primmary leading-[30px]">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
-                            aliquam dui.
-                        </p>
-                        <a href=""
-                            class="mt-2 flex flex-row items-center justify-between font-bold text-green-10">Conoce
-                            más
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fill-green-10 w-4 h-4">
-                                <path
-                                    d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/product-img.png" alt="hero image"
-                        class="block w-full max-w-[1080px] max-h-[460px] mx-auto">
-                    <div class="py-5 px-5 pb-10">
-                        <span class="text-green-modular font-bold">Nombre del producto</span>
-                        <p class="mt-2 text-m text-black-primmary leading-[30px]">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id auctor ante, sit amet
-                            aliquam dui.
-                        </p>
-                        <a href=""
-                            class="mt-2 flex flex-row items-center justify-between font-bold text-green-10">Conoce
-                            más
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fill-green-10 w-4 h-4">
-                                <path
-                                    d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+                <?php
+                endif;
+                ?>
             </div>
             <div class="flex justify-center">
-                <button class="rounded-lg mt-20 p-4 text-2xl text-gray-QG bg-yellow-QG">Ver todos</button>
+                <a href="/productos?line=qg" class="rounded-lg mt-20 p-4 text-2xl text-gray-QG bg-yellow-QG">Ver todos</a>
             </div>
         </section>
 
@@ -213,9 +139,9 @@ get_header();
                     <p class="mt-7 leading-[30px] font-lato text-gray-QG">
                         Diseñamos muebles innovadores y duraderos con materiales exclusivos como el HDF, ideales para cocinas, baños y closets. Con sede en Bávaro-Punta Cana y tienda en Nagua, ofrecemos calidad y personalización en toda República Dominicana y el Caribe.
                     </p>
-                    <a href="" class="mt-2 flex flex-row items-center self-end font-bold text-green-10">Ver
+                    <a href="/?s=&line=cmc" class="mt-2 flex flex-row items-center self-end font-bold text-green-10">Ver
                         productos
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fill-green-10 w-4 h-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fill-green-10 w-4 h-4 ml-2.5">
                             <path
                                 d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
                         </svg>

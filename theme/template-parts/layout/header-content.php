@@ -12,9 +12,9 @@
 <header class="py-5 px-5">
 	<div class="w-full max-w-screen-xl mx-auto flex flex-row items-center justify-between md:justify-between gap-x-2">
 		<div class="flex flex-row gap-6">
-			<a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/nav-img.png" alt="Logo QG"
+			<a href="/"><img src="<?php echo get_template_directory_uri(); ?>/images/nav-img.png" alt="Logo QG"
 					class="block w-max h-16"></a>
-			<a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/nav-logo.png" alt="Logo CMC"
+			<a href="/cmc"><img src="<?php echo get_template_directory_uri(); ?>/images/nav-logo.png" alt="Logo CMC"
 					class="block w-max h-16"></a>
 		</div>
 
@@ -31,17 +31,17 @@
 				</a>
 
 				<li><a href="<?php echo esc_url(home_url('/')); ?>"
-						class="block w-full md:w-fit px-1 py-2 text-green-qg hover:text-shadow-sm transition-colors">Quality
+						class="block w-full md:w-fit px-1 py-2 hover:text-green-qg">Quality
 						Guard</a>
 				</li>
 				<li><a href="<?php echo esc_url(home_url('/cmc')); ?>"
-						class="block w-full md:w-fit px-1 py-2 text-green-qg hover:text-shadow-sm transition-colors">CMC</a>
+						class="block w-full md:w-fit px-1 py-2 hover:text-green-qg">CMC</a>
 				</li>
 				<li>
 					<div class="relative inline-block w-full lg:w-auto text-left group">
 						<div class="flex flex-row items-center justify-between gap-x-2.5">
-							<a href="/"
-								class="block w-full md:w-fit px-1 py-2 text-green-qg hover:text-shadow-sm transition-colors">
+							<a href="/?s=&line="
+								class="block w-full md:w-fit px-1 py-2 hover:text-green-qg">
 								Productos
 							</a>
 							<svg id="dropdownButton" xmlns="http://www.w3.org/2000/svg" class="h-6 lg:h-4 fill-gray-QG"
@@ -54,14 +54,14 @@
 						<div id="dropdownMenu"
 							class="hidden group-hover:block lg:absolute static mt-0 w-full lg:w-48 lg:rounded-md lg:shadow-lg bg-transparent lg:bg-white">
 							<div class="py-1">
-								<a href="/productos?line=qg" class="block px-4 py-4 lg:py-2 text-s text-black lg:border-b lg:border-[#E6E6E6]">Quality Guard</a>
-								<a href="/productos?line=cmc" class="block px-4 py-4 lg:py-2 text-s text-black lg:border-b lg:border-[#E6E6E6]">CMC</a>
+								<a href="/?s=&line=qg" class="block px-4 py-4 lg:py-2 text-s text-black lg:border-b lg:border-[#E6E6E6]">Quality Guard</a>
+								<a href="/?s=&line=cmc" class="block px-4 py-4 lg:py-2 text-s text-black lg:border-b lg:border-[#E6E6E6]">CMC</a>
 							</div>
 						</div>
 					</div>
 				</li>
-				<li><a href="<?php echo esc_url(home_url('/')); ?>"
-						class="block w-full md:w-fit px-1 py-2 text-green-qg hover:text-shadow-sm transition-colors">Contactos</a>
+				<li>
+					<a href="<?php echo esc_url(home_url('/')); ?>" class="block w-full md:w-fit px-1 py-2 hover:text-green-qg">Contactos</a>
 				</li>
 			</ul>
 		</nav>
