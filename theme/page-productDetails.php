@@ -104,7 +104,7 @@ get_header();
         </div>
     </section>
 
-    <section class="mt-24">
+    <section class="mt-32">
         <h2 class="text-h5 text-green-10 font-bold">Productos relacionados</h2>
 
         <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-6 font-lato">

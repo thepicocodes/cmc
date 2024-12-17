@@ -42,7 +42,7 @@ get_header();
     </section>
 
     <!-- Products -->
-    <section class="mt-24">
+    <section class="mt-32">
         <h2 class="text-h5 md:text-h2 text-blue-modular font-medium">Nuestros productos</h2>
         <div class="w-full mt-2 flex flex-col md:flex-row items-center gap-2.5">
             <div class="relative w-full">

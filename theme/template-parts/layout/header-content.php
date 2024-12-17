@@ -54,8 +54,8 @@
 						<div id="dropdownMenu"
 							class="hidden group-hover:block lg:absolute static mt-0 w-full lg:w-48 lg:rounded-md lg:shadow-lg bg-transparent lg:bg-white">
 							<div class="py-1">
-								<a href="#" class="block px-4 py-4 lg:py-2 text-s text-black lg:border-b lg:border-[#E6E6E6]">Quality Guard</a>
-								<a href="#" class="block px-4 py-4 lg:py-2 text-s text-black lg:border-b lg:border-[#E6E6E6]">CMC</a>
+								<a href="/productos?line=qg" class="block px-4 py-4 lg:py-2 text-s text-black lg:border-b lg:border-[#E6E6E6]">Quality Guard</a>
+								<a href="/productos?line=cmc" class="block px-4 py-4 lg:py-2 text-s text-black lg:border-b lg:border-[#E6E6E6]">CMC</a>
 							</div>
 						</div>
 					</div>

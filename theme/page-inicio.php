@@ -17,9 +17,9 @@ get_header();
             <div class="w-full max-w-[840px] mx-auto mt-24">
                 <h3 class="text-h5 text-black-primmary">Sobre nosotros</h3>
                 <p class="mt-6 text-xl text-gray-QG">
-                    En Caribbean Modular Concept diseñamos y fabricamos soluciones de mobiliario innovadoras y de alta calidad para cocinas, baños, vestidores y closets, adaptándonos a las necesidades específicas de cada cliente. Con presencia en República Dominicana y Puerto Rico, y planes de expansión por todo el Caribe, nos destacamos por ofrecer materiales de alta resistencia, como el HDF con laminados exclusivos, ideales para ambientes con alta humedad. Nuestra fábrica, equipada con maquinaria de última generación, garantiza acabados impecables y un estricto control de calidad que respalda la confianza de nuestros clientes en cada proyecto.
+                    Quality Guard es líder en la fabricación de ventanas de seguridad con reja integrada, ofreciendo protección confiable y duradera para hogares y empresas. Con una planta de producción avanzada en República Dominicana, combinamos experiencia, innovación y calidad excepcional para garantizar la tranquilidad de nuestros clientes.
                     <br><br>
-                    Desde nuestra central en Bávaro-Punta Cana y nuestra tienda en Nagua, cubrimos todo el país, brindando atención personalizada y soluciones que transforman espacios en experiencias únicas. Nuestro compromiso con la excelencia y la innovación, respaldado por una trayectoria de crecimiento constante, nos permite ofrecer diseños vanguardistas, acabados dinámicos y la capacidad de personalizar cada detalle. Caribbean Modular Concept no solo crea muebles, crea ambientes que reflejan estilo, funcionalidad y durabilidad.
+                    Operamos bajo nuestra marca registrada ERIMAR INDUSTRIAL, dedicada al diseño de troqueles y fabricación de maquinarias, mientras que nuestra línea de cocinas modulares está representada por Caribbean Modular Concepts. En Quality Guard, protegemos lo que más importa con soluciones diseñadas para superar los estándares de la industria.
                 </p>
                 <a href="#" class="rounded-lg inline-block mt-6 p-4 text-xl text-gray-QG bg-yellow-QG">Contáctanos</a>
             </div>
@@ -30,7 +30,7 @@ get_header();
 
 
         <!-- Products -->
-        <section class="mt-24">
+        <section class="mt-32">
             <h2 class="text-h5 md:text-h2 text-blue-modular font-medium">Nuestros productos</h2>
             <div class="w-full mt-2 flex flex-col md:flex-row items-center gap-2.5">
                 <div class="relative w-full">
@@ -52,7 +52,7 @@ get_header();
                         
                         <ul class="flex flex-row items-center mt-2 md:mt-0 gap-2.5 text-[#828282]">
                             <li class="rounded-lg bg-[#f8f8f8]">
-                                <select name="company" class="w-max flex flex-row items-center gap-2.5 p-4 bg-transparent cursor-pointer">
+                                <select name="line" class="w-max flex flex-row items-center gap-2.5 p-4 bg-transparent cursor-pointer">
                                     <option value="">Línea de producto</option>
                                     <option value="qg">Quality Guard</option>
                                     <option value="cmc">CMC</option>
@@ -196,7 +196,7 @@ get_header();
 
 
         <!-- More products -->
-        <section class="mt-24">
+        <section class="mt-32">
             <h2 class="text-h5 md:text-h2 font-medium text-center text-blue-modular">Otras líneas de productos</h2>
             <p class="mt-2 text-gray-QG text-m text-center font-medium">
                 Soluciones integrales para cada espacio de tu hogar.
@@ -225,7 +225,7 @@ get_header();
         </section>
 
         <!-- Testimonials -->
-        <section class="mt-24">
+        <section class="mt-32">
             <h2 class="text-h5 md:text-h2 font-medium text-center text-blue-modular">Testimonios</h2>
             <p class="mt-2 text-gray-QG text-m text-center font-medium">
                 La confianza de nuestros clientes, nuestro mayor respaldo.
