@@ -37,10 +37,10 @@ if (!is_wp_error($terms) && !empty($terms)) {
 
             <div class="w-full md:max-w-[464px] pt-8 md:px-9 pb-10">
                 <p class="text-m font-medium text-blue-modular">Precio desde</p>
-                <span class="mt-2 text-h5 md:text-h2 text-gray-QG font-medium">RD$120,000</span>
+                <span class="mt-2 text-h5 md:text-h2 text-gray-QG font-medium">RD$ <?php echo esc_html(get_field('precio')); ?></span>
                 <p class="mt-2 text-m font-medium text-blue-modular">Estos precios están sujetos a cotización</p>
                 <a href=""
-                    class="rounded-lg block w-full mt-4 p-4 font-medium text-2xl text-center text-white bg-green-modular">Cotiza
+                    class="rounded-lg block w-full mt-4 p-4 font-medium text-2xl text-center <?php echo $slug === 'quality-guard' ? 'bg-yellow-QG text-green-10' : 'text-white bg-green-modular' ?>">Cotiza
                     ahora</a>
                 <a href=""
                     class="rounded-lg block w-full mt-4 p-4 font-medium text-2xl text-center text-white bg-green-10">¿Tienes
@@ -137,7 +137,7 @@ if (!is_wp_error($terms) && !empty($terms)) {
             if ($related_products->have_posts()) : ?>
                 <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-6 font-lato">
                     <?php while ($related_products->have_posts()) : $related_products->the_post(); ?>
-                        <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
+                        <a href="<?php the_permalink(); ?>" class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                             <?php if (has_post_thumbnail()) : ?>
                                 <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="<?php the_title(); ?>"
                                     class="block w-full object-cover h-[300px] rounded-tl-xl rounded-tr-xl">
@@ -152,19 +152,26 @@ if (!is_wp_error($terms) && !empty($terms)) {
                                     <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
                                 </p>
 
-                                <a href="<?php the_permalink(); ?>"
-                                    class="mt-2 flex flex-row items-center justify-between font-bold text-green-10">
+                                <div class="mt-2 flex flex-row items-center justify-between font-bold text-green-10">
                                     Conoce más
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fill-green-10 w-4 h-4">
                                         <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
                                     </svg>
-                                </a>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     <?php endwhile; ?>
                 </div>
                 <div class="flex justify-center">
-                    <a href="/productos" class="rounded-lg mt-20 p-4 text-2xl text-white bg-green-modular">Ver todos</a>
+                    <?php
+                        $query_string = '';
+                        if ($slug === 'quality-guard') {
+                            $query_string = 'line=qg';
+                        } elseif ($slug === 'cmc') {
+                            $query_string = 'line=cmc';
+                        }
+                    ?>
+                    <a href="/?s=&<?php echo $query_string; ?>" class="rounded-lg mt-20 p-4 text-2xl text-white bg-green-modular">Ver todos</a>
                 </div>
             <?php else : ?>
                 <p class="text-center mt-10 text-gray-QG">Sin productos relacionados.</p>

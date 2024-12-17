@@ -20,7 +20,7 @@ $line_value = isset($_GET['line']) ? esc_attr($_GET['line']) : '';
         } elseif ($line_value === 'cmc') {
             echo '<img src="' . get_template_directory_uri() . '/images/product-img02.png" alt="Caribbean Modular Concept" class="block w-full max-w-[1240px] h-[460px] object-cover object-center rounded-2xl mt-10">';
         } else {
-            echo '<img src="' . get_template_directory_uri() . '/images/product-img02.png" alt="' . $slug . '" class="block w-full max-w-[1240px] h-[460px] object-cover object-center rounded-2xl mt-10">';
+            echo '<img src="' . get_template_directory_uri() . '/images/product-img02.png" alt="" class="block w-full max-w-[1240px] h-[460px] object-cover object-center rounded-2xl mt-10">';
         }
     ?>
     
@@ -29,11 +29,12 @@ $line_value = isset($_GET['line']) ? esc_attr($_GET['line']) : '';
             <div class="relative w-full">
                 <form action="/" method="GET" class="relative flex flex-col md:flex-row items-center gap-2.5">
                     <div class="relative w-full">
-                    <input type="search" 
-                                name="s" 
-                                class="rounded-lg border w-full h-[52px] border-gray-1000 p-[14px] text-base"
-                                placeholder="¿Buscar entre mis productos?"
-                                value="<?php echo isset($_GET['s']) ? esc_attr($_GET['s']) : '' ?>">
+                        <input type="text" name="line" value="<?php echo $line_value ?>" hidden>
+                        <input type="search" 
+                            name="s" 
+                            class="rounded-lg border w-full h-[52px] border-gray-1000 p-[14px] text-base"
+                            placeholder="¿Buscar entre mis productos?"
+                            value="<?php echo isset($_GET['s']) ? esc_attr($_GET['s']) : '' ?>">
                         <button type="submit" class="absolute top-2/4 right-[17px] -translate-y-2/4 bg-white">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="w-4 h-4" 
@@ -43,13 +44,29 @@ $line_value = isset($_GET['line']) ? esc_attr($_GET['line']) : '';
                             </svg>
                         </button>
                     </div>
-                    <ul class="flex flex-row items-center mt-2 md:mt-0 gap-2.5 text-[#828282]">
-                        <li class="rounded-lg bg-[#f8f8f8]">
-                            <select name="line" class="w-max flex flex-row items-center gap-2.5 p-4 bg-transparent cursor-pointer">
-                                <option value="" <?php echo (isset($_GET['line']) && $_GET['line'] == '') ? 'selected' : ''; ?>>Línea de producto</option>
-                                <option value="qg" <?php echo (isset($_GET['line']) && $_GET['line'] == 'qg') ? 'selected' : ''; ?>>Quality Guard</option>
-                                <option value="cmc" <?php echo (isset($_GET['line']) && $_GET['line'] == 'cmc') ? 'selected' : ''; ?>>CMC</option>
-                            </select>
+                    
+                    <ul class="flex flex-row items-center mt-2 md:mt-0 gap-2.5 text-[#828282] max-sm:w-full">
+                        <li class="rounded-lg bg-[#f8f8f8] relative max-sm:w-full">
+                            <button id="lines-options-btn" class="w-max flex flex-row items-center gap-2.5 p-4 max-sm:w-full">
+                                Linea de productos
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-[#828282]"
+                                    viewBox="0 0 512 512">
+                                    <path
+                                        d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                                </svg>
+                            </button>
+                            <ul id="lines-options-menu" class="hidden z-50 absolute bg-white right-0 shadow-lg rounded-lg overflow-hidden mt-2 w-full min-w-52">
+                                <li>
+                                    <a href="<?php echo esc_url(add_query_arg(array('line' => 'qg', 's' => isset($_GET['s']) ? esc_attr($_GET['s']) : ''), home_url('/'))); ?>"  class="block p-4 hover:bg-gray-100">
+                                        Quality Guard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo esc_url(add_query_arg(array('line' => 'cmc', 's' => isset($_GET['s']) ? esc_attr($_GET['s']) : ''), home_url('/'))); ?>"  class="block p-4 hover:bg-gray-100">
+                                        CMC
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </form>

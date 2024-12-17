@@ -79,7 +79,7 @@ $video_url = wp_get_attachment_url(85);
                 if ($products->have_posts()) :
                     while ($products->have_posts()) : $products->the_post();
                 ?>
-                    <div class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
+                    <a href="<?php the_permalink(); ?>" class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
                         <?php if (has_post_thumbnail()) : ?>
                             <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"
                                 class="block w-full object-cover h-[300px] rounded-tl-xl rounded-tr-xl">
@@ -94,15 +94,14 @@ $video_url = wp_get_attachment_url(85);
                                 <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
                             </p>
 
-                            <a href="<?php the_permalink(); ?>"
-                                class="mt-2 flex flex-row items-center justify-between font-bold text-green-10">
+                            <div class="mt-2 flex flex-row items-center justify-between font-bold text-green-10">
                                 Conoce más
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fill-green-10 w-4 h-4">
                                     <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
                                 </svg>
-                            </a>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 <?php 
                     endwhile;
                     wp_reset_postdata();

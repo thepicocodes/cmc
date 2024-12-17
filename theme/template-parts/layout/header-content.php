@@ -40,7 +40,7 @@
 				<li>
 					<div class="relative inline-block w-full lg:w-auto text-left group">
 						<div class="flex flex-row items-center justify-between gap-x-2.5">
-							<a href="/?s=&line="
+							<a href="#"
 								class="block w-full md:w-fit px-1 py-2 hover:text-green-qg">
 								Productos
 							</a>
@@ -61,7 +61,7 @@
 					</div>
 				</li>
 				<li>
-					<a href="<?php echo esc_url(home_url('/')); ?>" class="block w-full md:w-fit px-1 py-2 hover:text-green-qg">Contactos</a>
+					<a href="<?php echo esc_url(home_url('/contacto')); ?>" class="block w-full md:w-fit px-1 py-2 hover:text-green-qg">Contactos</a>
 				</li>
 			</ul>
 		</nav>

@@ -140,6 +140,27 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function() {
 	const card = document.querySelector('.slide-in');
 	if (card) {
-		card.classList.add('visible');
+		setTimeout(() => {
+			card.classList.add('visible');
+		}, 300);
 	}
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdownButton = document.getElementById('lines-options-btn');
+    const dropdownMenu = document.getElementById('lines-options-menu');
+
+    if (dropdownButton && dropdownMenu) {
+        dropdownButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            dropdownMenu.classList.toggle('hidden');
+        });
+
+        // Optional: Close the dropdown when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.classList.add('hidden');
+            }
+        });
+    }
 });
