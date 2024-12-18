@@ -19,7 +19,7 @@ if (!is_wp_error($terms) && !empty($terms)) {
 <div class="w-full max-w-screen-xl mx-auto px-5">
     <section class="mt-24">
         <span class="text-green-qg text-base font-bold">
-            <?php 
+            <?php
                 if ($slug === 'quality-guard') {
                     echo 'Quality Guard/';
                 } elseif ($slug === 'cmc') {
@@ -39,12 +39,8 @@ if (!is_wp_error($terms) && !empty($terms)) {
                 <p class="text-m font-medium text-blue-modular">Precio desde</p>
                 <span class="mt-2 text-h5 md:text-h2 text-gray-QG font-medium">RD$ <?php echo esc_html(get_field('precio')); ?></span>
                 <p class="mt-2 text-m font-medium text-blue-modular">Estos precios están sujetos a cotización</p>
-                <a href=""
-                    class="rounded-lg block w-full mt-4 p-4 font-medium text-2xl text-center <?php echo $slug === 'quality-guard' ? 'bg-yellow-QG text-green-10' : 'text-white bg-green-modular' ?>">Cotiza
-                    ahora</a>
-                <a href=""
-                    class="rounded-lg block w-full mt-4 p-4 font-medium text-2xl text-center text-white bg-green-10">¿Tienes
-                    dudas?</a>
+                <a href="/#contacto" class="rounded-lg block w-full mt-4 p-4 font-medium text-2xl text-center <?php echo $slug === 'quality-guard' ? 'bg-yellow-QG text-green-10' : 'text-white bg-green-modular' ?>">Cotiza ahora</a>
+                <a href="/contacto" class="rounded-lg block w-full mt-4 p-4 font-medium text-2xl text-center text-white bg-green-10">¿Tienes dudas?</a>
             </div>
         </div>
 
@@ -83,7 +79,7 @@ if (!is_wp_error($terms) && !empty($terms)) {
                         <?php for ($i = 1; $i <= 5; $i++) :
                             $pregunta = get_field('faq_pregunta_' . $i);
                             $respuesta = get_field('faq_respuesta_' . $i);
-                            
+
                             if (!empty($pregunta) && !empty($respuesta)) : ?>
                                 <div data-accordion class="rounded-[10px] py-2.5 px-5 bg-[#F8F8F8]">
                                     <button class="w-full flex flex-col gap-2.5">
@@ -115,7 +111,7 @@ if (!is_wp_error($terms) && !empty($terms)) {
         <?php
         // Get current product's terms
         $terms = wp_get_object_terms(get_the_ID(), 'producto_category', array('fields' => 'ids'));
-        
+
         if (!empty($terms)) {
             // Query related products
             $args = array(

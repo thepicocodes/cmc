@@ -16,8 +16,10 @@ $video_url = wp_get_attachment_url(20);
         <section class="mt-24">
             <img src="<?php echo get_template_directory_uri(); ?>/images/qg-head.jpeg" alt="hero image"
                 class="block w-full max-w-[1240px] h-[460px] object-cover object-center rounded-2xl">
+
             <div class="w-full max-w-[840px] mx-auto mt-24">
-                <h3 class="text-h5 text-black-primmary">Sobre nosotros</h3>
+                <h3 id="nosotros" class="text-h5 text-black-primmary">Sobre nosotros</h3>
+
                 <p class="mt-6 text-xl text-gray-QG">
                     Quality Guard es líder en la fabricación de ventanas de seguridad con reja integrada, ofreciendo
                     protección confiable y duradera para hogares y empresas. Con una planta de producción avanzada en
@@ -29,7 +31,8 @@ $video_url = wp_get_attachment_url(20);
                     Caribbean Modular Concepts. En Quality Guard, protegemos lo que más importa con soluciones diseñadas
                     para superar los estándares de la industria.
                 </p>
-                <a href="#" class="rounded-lg inline-block mt-6 p-4 text-xl text-gray-QG bg-yellow-QG">Contáctanos</a>
+
+                <a href="/#contacto" class="rounded-lg inline-block mt-6 p-4 text-xl text-gray-QG bg-yellow-QG">Contáctanos</a>
             </div>
         </section>
 
