@@ -19,9 +19,15 @@ $video_url = wp_get_attachment_url(85);
             <div class="w-full max-w-[840px] mx-auto mt-24">
                 <h3 class="text-h5 text-black-primmary">Sobre nosotros</h3>
                 <p class="mt-6 text-xl text-gray-QG">
-                    Quality Guard es líder en la fabricación de ventanas de seguridad con reja integrada, ofreciendo protección confiable y duradera para hogares y empresas. Con una planta de producción avanzada en República Dominicana, combinamos experiencia, innovación y calidad excepcional para garantizar la tranquilidad de nuestros clientes.
+                    Quality Guard es líder en la fabricación de ventanas de seguridad con reja integrada, ofreciendo
+                    protección confiable y duradera para hogares y empresas. Con una planta de producción avanzada en
+                    República Dominicana, combinamos experiencia, innovación y calidad excepcional para garantizar la
+                    tranquilidad de nuestros clientes.
                     <br><br>
-                    Operamos bajo nuestra marca registrada ERIMAR INDUSTRIAL, dedicada al diseño de troqueles y fabricación de maquinarias, mientras que nuestra línea de cocinas modulares está representada por Caribbean Modular Concepts. En Quality Guard, protegemos lo que más importa con soluciones diseñadas para superar los estándares de la industria.
+                    Operamos bajo nuestra marca registrada ERIMAR INDUSTRIAL, dedicada al diseño de troqueles y
+                    fabricación de maquinarias, mientras que nuestra línea de cocinas modulares está representada por
+                    Caribbean Modular Concepts. En Quality Guard, protegemos lo que más importa con soluciones diseñadas
+                    para superar los estándares de la industria.
                 </p>
                 <a href="#" class="rounded-lg inline-block mt-6 p-4 text-xl text-gray-QG bg-yellow-QG">Contáctanos</a>
             </div>
@@ -43,14 +49,11 @@ $video_url = wp_get_attachment_url(85);
                     <form action="/" method="GET" class="relative flex flex-col md:flex-row items-center gap-2.5">
                         <div class="relative w-full">
                             <input type="text" name="line" value="qg" hidden>
-                            <input type="search" 
-                                   name="s" 
-                                   class="rounded-lg border w-full h-[52px] border-gray-1000 p-[14px] text-base"
-                                   placeholder="¿Buscar entre mis productos?">
+                            <input type="search" name="s"
+                                class="rounded-lg border w-full h-[52px] border-gray-1000 p-[14px] text-base"
+                                placeholder="¿Buscar entre mis productos?">
                             <button type="submit" class="absolute top-2/4 right-[17px] -translate-y-2/4 bg-white">
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                    class="w-4 h-4" 
-                                    viewBox="0 0 512 512">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 512 512">
                                     <path
                                         d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
                                 </svg>
@@ -68,54 +71,57 @@ $video_url = wp_get_attachment_url(85);
                     'tax_query' => array(
                         array(
                             'taxonomy' => 'producto_category',
-                            'field'    => 'slug',
-                            'terms'    => 'quality-guard'
+                            'field' => 'slug',
+                            'terms' => 'quality-guard'
                         ),
                     )
                 );
 
                 $products = new WP_Query($args);
 
-                if ($products->have_posts()) :
-                    while ($products->have_posts()) : $products->the_post();
-                ?>
-                    <a href="<?php the_permalink(); ?>" class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
-                        <?php if (has_post_thumbnail()) : ?>
-                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"
-                                class="block w-full object-cover h-[300px] rounded-tl-xl rounded-tr-xl">
-                        <?php else : ?>
-                            <div class="block w-full object-cover h-[300px] bg-neutral-200 rounded-tl-xl rounded-tr-xl"></div>
-                        <?php endif; ?>
+                if ($products->have_posts()):
+                    while ($products->have_posts()):
+                        $products->the_post();
+                        ?>
+                        <a href="<?php the_permalink(); ?>" class="rounded-br-2xl rounded-bl-2xl bg-white drop-shadow-xl">
+                            <?php if (has_post_thumbnail()): ?>
+                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"
+                                    class="block w-full object-cover h-[300px] rounded-tl-xl rounded-tr-xl">
+                            <?php else: ?>
+                                <div class="block w-full object-cover h-[300px] bg-neutral-200 rounded-tl-xl rounded-tr-xl"></div>
+                            <?php endif; ?>
 
-                        <div class="py-5 px-5 pb-10">
-                            <span class="text-green-modular font-bold"><?php the_title(); ?></span>
+                            <div class="py-5 px-5 pb-10">
+                                <span class="text-green-modular font-bold"><?php the_title(); ?></span>
 
-                            <p class="mt-2 text-m text-black-primmary leading-[30px] min-h-20">
-                                <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
-                            </p>
+                                <p class="mt-2 text-m text-black-primmary leading-[30px] min-h-20">
+                                    <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
+                                </p>
 
-                            <div class="mt-2 flex flex-row items-center justify-between font-bold text-green-10">
-                                Conoce más
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fill-green-10 w-4 h-4">
-                                    <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-                                </svg>
+                                <div class="mt-2 flex flex-row items-center justify-between font-bold text-green-10">
+                                    Conoce más
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fill-green-10 w-4 h-4">
+                                        <path
+                                            d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                                    </svg>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                <?php 
+                        </a>
+                        <?php
                     endwhile;
                     wp_reset_postdata();
                 else:
-                ?>
+                    ?>
                     <div class="col-span-full text-center text-gray-QG py-40">
                         No existen productos.
                     </div>
-                <?php
+                    <?php
                 endif;
                 ?>
             </div>
             <div class="flex justify-center">
-                <a href="/productos?line=qg" class="rounded-lg mt-20 p-4 text-2xl text-gray-QG bg-yellow-QG">Ver todos</a>
+                <a href="/productos?line=qg" class="rounded-lg mt-20 p-4 text-2xl text-gray-QG bg-yellow-QG">Ver
+                    todos</a>
             </div>
         </section>
 
@@ -136,11 +142,14 @@ $video_url = wp_get_attachment_url(85);
                         class="block w-max">
                     <h2 class="mt-3 text-h5 text-black-primmary font-bold">Caribbean Modular Concept</h2>
                     <p class="mt-7 leading-[30px] font-lato text-gray-QG">
-                        Diseñamos muebles innovadores y duraderos con materiales exclusivos como el HDF, ideales para cocinas, baños y closets. Con sede en Bávaro-Punta Cana y tienda en Nagua, ofrecemos calidad y personalización en toda República Dominicana y el Caribe.
+                        Diseñamos muebles innovadores y duraderos con materiales exclusivos como el HDF, ideales para
+                        cocinas, baños y closets. Con sede en Bávaro-Punta Cana y tienda en Nagua, ofrecemos calidad y
+                        personalización en toda República Dominicana y el Caribe.
                     </p>
                     <a href="/?s=&line=cmc" class="mt-2 flex flex-row items-center self-end font-bold text-green-10">Ver
                         productos
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fill-green-10 w-4 h-4 ml-2.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                            class="fill-green-10 w-4 h-4 ml-2.5">
                             <path
                                 d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
                         </svg>
@@ -163,16 +172,17 @@ $video_url = wp_get_attachment_url(85);
                     <p class="text-brown-700 mt-2">Clientes satisfechos</p>
                 </div>
 
-                <div id="testimonial-swiper"
-                    class="swiper testimonial-swiper rounded-lg w-full">
+                <div id="testimonial-swiper" class="swiper testimonial-swiper rounded-lg w-full">
                     <div class="swiper-wrapper !h-[300px] !gap-2.5">
-                        <div class="swiper-slide rounded-lg p-6 !flex !flex-col !justify-center text-center text-[#602900] bg-yellow-20 border-4 border-[#0000000A]">
+                        <div
+                            class="swiper-slide rounded-lg p-6 !flex !flex-col !justify-center text-center text-[#602900] bg-yellow-20 border-4 border-[#0000000A]">
                             <p class="mb-4 text-[#602900] text-2xl font-medium">
                                 "Have full control of your budget and avoid waste"
                             </p>
                             <p class="text-[#602900] text-m font-lato font-bold">Nombre del cliente</p>
                         </div>
-                        <div class="swiper-slide rounded-lg p-6 !flex !flex-col !justify-center text-center text-[#602900] bg-yellow-20 border-4 border-[#0000000A]">
+                        <div
+                            class="swiper-slide rounded-lg p-6 !flex !flex-col !justify-center text-center text-[#602900] bg-yellow-20 border-4 border-[#0000000A]">
                             <p class="mb-4 text-[#602900] text-xl font-medium">
                                 "Have full control of your budget and avoid waste"
                             </p>
@@ -190,7 +200,8 @@ $video_url = wp_get_attachment_url(85);
             <div class="w-full max-w-[682px] py-14 md:px-10">
                 <div class="rounded-2xl p-10 text-gray-QG font-lato backdrop-blur-xl bg-gray-100/75">
                     <h2 class="md:text-h2 text-4xl font-medium">Contáctanos</h2>
-                    <form action="get" class="mt-10">
+                    <?php echo do_shortcode('[wpforms id="22"]'); ?>
+                    <!-- <form action="get" class="mt-10">
                         <div class="flex w-full flex-col gap-10 md:flex-row">
                             <div class="flex w-full flex-col">
                                 <label for="Name" class="text-body font-bold">Nombre:</label>
@@ -221,12 +232,15 @@ $video_url = wp_get_attachment_url(85);
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </section>
     </div>
 </div>
+
+
+
 
 <?php
 get_footer();

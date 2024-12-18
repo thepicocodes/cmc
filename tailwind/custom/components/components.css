@@ -54,3 +54,14 @@
 .entry-content > .alignright {
 	@apply float-right ml-8;
 }
+
+.contact-form-input input {
+	@apply !border-2 !mt-2 !h-[55px] !w-full !rounded !border-[#EAEAEA] !p-5 !outline-none;
+}
+.contact-form-input label {
+	@apply !text-body !font-bold;
+}
+
+.contact-form-submit {
+	@apply !rounded-lg !w-fit !h-[60px] !mt-10 !gap-x-2 !p-[18px] !inline-block !flex-row !items-center !text-xl !text-gray-QG !font-medium !bg-yellow-QG;
+}

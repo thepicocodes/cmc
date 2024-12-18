@@ -5,6 +5,32 @@ const plugin = require('tailwindcss/plugin');
 const includePreflight = 'editor' === process.env._TW_TARGET ? false : true;
 
 module.exports = {
+	safelist: [
+		'border-2',
+		'mt-2',
+		'h-[55px]',
+		'w-full',
+		'rounded',
+		'border-[#EAEAEA]',
+		'p-5',
+		'outline-none',
+		'placeholder:text-[#A0A0A0]',
+		'text-body',
+		'font-bold',
+		'rounded-lg',
+		'w-fit',
+		'h-[60px]',
+		'mt-10',
+		'gap-x-2',
+		'p-[18px]',
+		'inline-block',
+		'flex-row',
+		'items-center',
+		'text-xl',
+		'text-gray-QG',
+		'font-medium',
+		'bg-yellow-QG',
+	],
 	presets: [
 		// Manage Tailwind Typography's configuration in a separate file.
 		require('./tailwind-typography.config.js'),
@@ -12,6 +38,7 @@ module.exports = {
 	content: [
 		// Ensure changes to PHP files trigger a rebuild.
 		'./theme/**/*.php',
+		'./src/**/*.{js,jsx,ts,tsx}',
 	],
 	theme: {
 		// Extend the default Tailwind theme.
