@@ -36,7 +36,7 @@ get_header();
                 Desde nuestra central en Bávaro-Punta Cana y nuestra tienda en Nagua, cubrimos todo el país, brindando atención personalizada y soluciones que transforman espacios en experiencias únicas. Nuestro compromiso con la excelencia y la innovación, respaldado por una trayectoria de crecimiento constante, nos permite ofrecer diseños vanguardistas, acabados dinámicos y la capacidad de personalizar cada detalle. Caribbean Modular Concept no solo crea muebles, crea ambientes que reflejan estilo, funcionalidad y durabilidad.
             </p>
 
-            <a href="#" class="rounded-lg inline-block mt-6 p-4 text-xl text-white bg-green-modular">Contáctanos</a>
+            <a href="/contacto" class="rounded-lg inline-block mt-6 p-4 text-xl text-white bg-green-modular">Contáctanos</a>
         </div>
     </section>
 
