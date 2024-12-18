@@ -13,9 +13,9 @@
     <div class="w-full max-w-screen-xl mx-auto">
         <div class="mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10">
             <div class="flex flex-row gap-x-6">
-                <a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/qg-footer.png" alt="Logo QG"
+                <a href="/"><img src="<?php echo get_template_directory_uri(); ?>/images/qg-footer.png" alt="Logo QG"
                         class="block h-[100px]"></a>
-                <a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/cmc-footer.png" alt="Logo CMC"
+                <a href="/cmc"><img src="<?php echo get_template_directory_uri(); ?>/images/cmc-footer.png" alt="Logo CMC"
                         class="block w-max h-[100px]"></a>
             </div>
             <div>
