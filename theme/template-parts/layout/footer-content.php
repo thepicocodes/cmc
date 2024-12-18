@@ -21,30 +21,69 @@
             <div>
                 <h5 class="text-green-10 font-bold text-base">Puertas y ventanas</h5>
                 <ul class="text-gray-QG">
-                    <li><a href="">Producto 1</a></li>
-                    <li><a href="">Producto 1</a></li>
-                    <li><a href="">Producto 1</a></li>
-                    <li><a href="">Producto 1</a></li>
+                    <?php
+                        // ... existing code ...
+
+                        $args = array(
+                            'post_type' => 'producto',
+                            'posts_per_page' => 4,
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'producto_category',
+                                    'field'    => 'slug',
+                                    'terms'    => 'qg',
+                                ),
+                            ),
+                        );
+
+                        $query = new WP_Query($args);
+
+                        if ($query->have_posts()) :
+                            while ($query->have_posts()) : $query->the_post(); ?>
+                                <li><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words(get_the_title(), 5); ?></a></li>
+                            <?php endwhile;
+                            wp_reset_postdata();
+                        endif;
+                    ?>
                 </ul>
             </div>
 
             <div>
                 <h5 class="text-green-10 font-bold text-base">Cocinas modulares</h5>
                 <ul class="text-gray-QG">
-                    <li><a href="">Producto 1</a></li>
-                    <li><a href="">Producto 1</a></li>
-                    <li><a href="">Producto 1</a></li>
-                    <li><a href="">Producto 1</a></li>
+                    <?php
+                        // ... existing code ...
+
+                        $args = array(
+                            'post_type' => 'producto',
+                            'posts_per_page' => 4,
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'producto_category',
+                                    'field'    => 'slug',
+                                    'terms'    => 'cmc',
+                                ),
+                            ),
+                        );
+
+                        $query = new WP_Query($args);
+
+                        if ($query->have_posts()) :
+                            while ($query->have_posts()) : $query->the_post(); ?>
+                                <li><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words(get_the_title(), 5); ?></a></li>
+                            <?php endwhile;
+                            wp_reset_postdata();
+                        endif;
+                    ?>
                 </ul>
             </div>
 
             <div>
                 <h5 class="text-green-10 font-bold text-base">Otros enlaces</h5>
                 <ul class="text-gray-QG">
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="">Nosotros</a></li>
-                    <li><a href="">Contactos</a></li>
-                    <li><a href="">Preguntas frecuentes</a></li>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/#nosotros">Nosotros</a></li>
+                    <li><a href="/contacto">Contactos</a></li>
                 </ul>
             </div>
         </div>

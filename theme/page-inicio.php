@@ -121,7 +121,7 @@ $video_url = wp_get_attachment_url(20);
                 ?>
             </div>
             <div class="flex justify-center">
-                <a href="/productos?line=qg" class="rounded-lg mt-20 p-4 text-2xl text-gray-QG bg-yellow-QG">Ver
+                <a href="/?s=&line=qg" class="rounded-lg mt-20 p-4 text-2xl text-gray-QG bg-yellow-QG">Ver
                     todos</a>
             </div>
         </section>
