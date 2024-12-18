@@ -8,7 +8,7 @@
  */
 get_header();
 
-$video_url = wp_get_attachment_url(85);
+$video_url = wp_get_attachment_url(20);
 ?>
 
 <div class="px-5">
@@ -34,12 +34,13 @@ $video_url = wp_get_attachment_url(85);
         </section>
 
         <div class="block w-full max-w-[1080px] rounded-xl mt-[150px] overflow-hidden mx-auto">
-            <video id="home-video" controls class="block w-full max-w-[1080px] rounded-xl">
-                <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+					<?php if ($video_url != ""): ?>
+						<video id="home-video" controls class="block w-full max-w-[1080px] rounded-xl">
+								<source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
+								Your browser does not support the video tag.
+						</video>
+					<?php endif; ?>
         </div>
-
 
         <!-- Products -->
         <section class="mt-32">
