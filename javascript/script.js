@@ -87,6 +87,13 @@ new Swiper('#testimonial-swiper', {
 	},
 });
 
+new Swiper('#product-swiper', {
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+});
+
 // FAQ
 document.addEventListener('DOMContentLoaded', function () {
 	const accordions = document.querySelectorAll('[data-accordion]');
@@ -102,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		button.addEventListener('click', () => {
 			accordions.forEach((otherAccordion, otherIndex) => {
-				const otherContent = 
+				const otherContent =
 					otherAccordion.querySelector('[data-content]');
 
 				if (index === otherIndex) {
@@ -116,28 +123,28 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Video autoplay when in view
-    const video = document.getElementById('home-video');
+	// Video autoplay when in view
+	const video = document.getElementById('home-video');
 
-    if (video) {
-        const playVideoIfInView = () => {
-            const rect = video.getBoundingClientRect();
-            const isInView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+	if (video) {
+		const playVideoIfInView = () => {
+			const rect = video.getBoundingClientRect();
+			const isInView = rect.top >= 0 && rect.bottom <= window.innerHeight;
 
-            if (isInView) {
-                video.play();
-            }
-        };
+			if (isInView) {
+				video.play();
+			}
+		};
 
-        // Check on scroll
-        window.addEventListener('scroll', playVideoIfInView);
+		// Check on scroll
+		window.addEventListener('scroll', playVideoIfInView);
 
-        // Initial check
-        playVideoIfInView();
-    }
+		// Initial check
+		playVideoIfInView();
+	}
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 	const card = document.querySelector('.slide-in');
 	if (card) {
 		setTimeout(() => {
@@ -147,20 +154,23 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const dropdownButton = document.getElementById('lines-options-btn');
-    const dropdownMenu = document.getElementById('lines-options-menu');
+	const dropdownButton = document.getElementById('lines-options-btn');
+	const dropdownMenu = document.getElementById('lines-options-menu');
 
-    if (dropdownButton && dropdownMenu) {
-        dropdownButton.addEventListener('click', function (e) {
-            e.preventDefault();
-            dropdownMenu.classList.toggle('hidden');
-        });
+	if (dropdownButton && dropdownMenu) {
+		dropdownButton.addEventListener('click', function (e) {
+			e.preventDefault();
+			dropdownMenu.classList.toggle('hidden');
+		});
 
-        // Optional: Close the dropdown when clicking outside
-        document.addEventListener('click', function (e) {
-            if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
-                dropdownMenu.classList.add('hidden');
-            }
-        });
-    }
+		// Optional: Close the dropdown when clicking outside
+		document.addEventListener('click', function (e) {
+			if (
+				!dropdownButton.contains(e.target) &&
+				!dropdownMenu.contains(e.target)
+			) {
+				dropdownMenu.classList.add('hidden');
+			}
+		});
+	}
 });
